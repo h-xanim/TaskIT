@@ -16,12 +16,17 @@ export default class Task {
     constructor(text: string, date: Date) {
         this.text = text;
         this.date = date;
-
         this.element = html.clone();
 
         this.element.find('.text').text(text);
-    }
+        this.element.find('.date-cell').text(this.date.toLocaleString());
+        this.element.find('.delete-button').click();
+        let deleteBtn: JQuery<Element> = this.element.find('.delete-button');
 
+        deleteBtn.click( _ => {
+            this.element.remove();
+        });
+    }
     public addMe(root: JQuery<Element>) {
         root.append(this.element);
     }
