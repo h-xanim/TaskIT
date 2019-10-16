@@ -1,15 +1,15 @@
 import './app-thirdparty';
 import './app.less';
-import Task from "./Task";
-
+import Task from './Task';
+/*Функция которая проверяет поле ввода, и запускает соответствующею функции если все ок*/
 
 $(() => {
 
-    let itemsContainer = $("#items-container");
+    let itemsContainer = $('#items-container');
 
-    let addButton = $("#add");
+    let addButton = $('#add');
 
-    let itemInput = $("#item-input");
+    let itemInput = $('#item-input');
 
     addButton.click(_ => {
 
@@ -19,5 +19,4 @@ $(() => {
         task.addMe(itemsContainer);
 
     });
-
 });
